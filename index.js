@@ -172,7 +172,16 @@ Use the filterByWord function below to do the following:
     DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
 
-function filterByWord(originalFlavors, string) {
+function filterByWord(originalFlavors, word) {
+    let flavoreSet = []
+
+    for(let i = 0; originalFlavors.length > i; i++) {
+        if(originalFlavors[i].includes(word)) {
+            flavoreSet.push(originalFlavors[i])
+        }
+    }
+
+    return flavoreSet
 }
 
 
@@ -188,8 +197,15 @@ Use the getAverageWordLength function below to do the following:
     For example: getAverageWordLength(originalFlavors) should return a number between 0 and 3.     
 */
 
-function getAverageWordLength(/*code here*/){
-    /*code here*/
+function getAverageWordLength(list){
+    let totalWords = 0
+
+    for(let i = 0; list.length > i; i++) {
+        var subArray = list[i].split(' ')
+        totalWords += subArray.length
+    }
+
+    return Math.round(totalWords / list.length)
 }
 
 
